@@ -6,7 +6,7 @@ const swaggerDocument = {
     "description": "API for indexing digital certificate data using Pinecone and Langchain."
   },
   "paths": {
-    "/certificates-free": {
+    "/index": {
       "post": {
         "summary": "Index a new digital certificate",
         "description": "Adds a new digital certificate to the Pinecone index.",
@@ -39,7 +39,7 @@ const swaggerDocument = {
         }
       }
     },
-    "/query-certificates-free": {
+    "/search": {
       "get": {
         "summary": "Query a digital certificate",
         "description": "Query a digital certificate in the Pinecone index.",

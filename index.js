@@ -78,7 +78,7 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
 // Rota para processar e indexar certificados usando Pinecone e Langchain com OpenAI
-app.post("/certificates-free", async (req, res) => {
+app.post("/index", async (req, res) => {
 
   // Extrai os dados do certificado do body da requisição
   const {
@@ -124,7 +124,7 @@ app.post("/certificates-free", async (req, res) => {
 
 
 // Rota para consultar certificados indexados
-app.get("/query-certificates-free", async (req, res) => {
+app.get("/search", async (req, res) => {
 
 
   const model = new OpenAI({
@@ -200,7 +200,7 @@ app.get("/query-certificates-free", async (req, res) => {
 });
 
 // Envia os resultados como resposta
-app.listen(3000, async () => {
+app.listen(3032, async () => {
   await init();
-  console.log("Server is running on http://localhost:3000");
+  console.log("Server is running on http://localhost:3032");
 });
